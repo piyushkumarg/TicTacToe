@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.heading{
+    color: blue;
+    font-size: 30px;
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footer{
+    color: black;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.players{
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    border-radius: 15px;
+    font-size: 24px;
+}
+
+.players div{
+    padding: 15px 25px;
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+.players div.active{
+    background: blue;
+    color: aliceblue;
+}
+
+.game-board{
+    margin-top: 50px;
+    display:  grid;
+    grid-template-columns: repeat(3,auto);
+}
+
+.cell{
+    height: 100px;
+    width: 100px;
+    border: 2px solid blue;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.cell.X{
+    color: #09aecc;
+}
+
+.cell.O{
+    color: #e50c33;
+}
+.cell:nth-child(1),.cell:nth-child(2),.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+
+.cell:nth-child(3n){
+    border-right: none;
+}
+
+.cell:nth-child(7),.cell:nth-child(8),.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.result{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.result h1{
+    color: antiquewhite;
+    font-size: 50px;
+    background-color: rgba(0, 0, 80, 0.5);
+}
+
+.result button{
+    font-size: 25px;
+    background-color: blue;
+    color: antiquewhite;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+.inactive{
+    display: none;
+}
+
+
+.disabled{
+    pointer-events: none;
+}
