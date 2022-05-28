@@ -36,12 +36,12 @@ cellElements.forEach(cell=>{
         if(winnerCheck(currentPlayer)){
             // console.log(currentPlayer+" WINNER");
             addInactive();
-            result_text.innerText = currentPlayer + " Win the Game";
+            result_text.innerText = currentPlayer + " is the winner";
 
         }else if(isDraw()){
             // console.log("Draw the Game!");
             addInactive();
-            result_text.innerText = "Draw the Game!";
+            result_text.innerText = "Game Draw!";
         }else{
             swapPlayer();
         }
