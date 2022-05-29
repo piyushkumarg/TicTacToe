@@ -21,7 +21,8 @@ const winning_Conditions = [
 
 const playerO = "O";
 const playerX = "X";
-
+let countO = 0;
+let countX = 0;
 let toggleTurn = true;
 
 cellElements.forEach(cell=>{
@@ -30,14 +31,11 @@ cellElements.forEach(cell=>{
         // console.log(cell.innerText);
         let currentPlayer = toggleTurn ? playerO : playerX; 
         cell.classList.add("disabled");
-
         addInCell(cell, currentPlayer);
-
         if(winnerCheck(currentPlayer)){
             // console.log(currentPlayer+" WINNER");
             addInactive();
             result_text.innerText = currentPlayer + " is the winner";
-
         }else if(isDraw()){
             // console.log("Draw the Game!");
             addInactive();
@@ -48,6 +46,8 @@ cellElements.forEach(cell=>{
 
     }
 });
+
+
 
 function winnerCheck(currentPlayer){
     return winning_Conditions.some(conditon=>{
